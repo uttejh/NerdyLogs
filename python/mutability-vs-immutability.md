@@ -121,90 +121,91 @@ because you can’t perform the mutation in place. All these intermediate string
 ### Mutability in Custom Classes
 Custom classes and their instances are mutable. 
 Techniques to Control Mutability in Custom Classes: <br>
-    1. Defining a `.__slots__` Class Attribute
-   - 
-        ```
+1. Defining a `.__slots__` Class Attribute
+
+- 
+     ```
         >>> class Book:
-        ...     __slots__ = ("title",)
-        ...     def __init__(self, title):
-        ...         self.title = title
-        ...
+     ...     __slots__ = ("title",)
+     ...     def __init__(self, title):
+     ...         self.title = title
+     ...
         
         >>> harry_potter = Book("Harry Potter")
         >>> harry_potter.title
-        'Harry Potter'
+     'Harry Potter'
         
         >>> harry_potter.author = "J. K. Rowling"
-        Traceback (most recent call last):
-            ...
-        AttributeError: 'Book' object has no attribute 'author' ```
+     Traceback (most recent call last):
+         ...
+     AttributeError: 'Book' object has no attribute 'author' ```
      
 
 Even though Book has a `.__slots__` attribute holding a tuple of allowed instance attributes, 
 you can still add/delete new class attributes and methods dynamically to your Book class.
 
 2. Providing Custom `.__setattr__()` and `.__delattr__()` Methods
-    - ```
-       class Immutable:
-        def __init__(self, value):
-            super().__setattr__("value", value)
+- ```
+   class Immutable:
+    def __init__(self, value):
+        super().__setattr__("value", value)
     
-        def __setattr__(self, name, attr_value):
-            raise AttributeError(f"can't set attribute '{name}'")
+    def __setattr__(self, name, attr_value):
+        raise AttributeError(f"can't set attribute '{name}'")
     
-        def __delattr__(self, name):
-            raise AttributeError(f"can't delete attribute '{name}'")
-        ```
+    def __delattr__(self, name):
+        raise AttributeError(f"can't delete attribute '{name}'")
+    ```
 If you use mutable objects as the value of an immutable class, then you won’t be able to prevent mutations on that value.
 
 3. Using Read-Only Properties and Descriptors
 
-   - ```
-        class Point:
-            def __init__(self, x, y):
-                self._x = x
-                self._y = y
+- ```
+     class Point:
+         def __init__(self, x, y):
+             self._x = x
+             self._y = y
         
-            @property
-            def x(self):
-                return self._x
+         @property
+         def x(self):
+             return self._x
         
-            @property
-            def y(self):
-                return self._y
+         @property
+         def y(self):
+             return self._y
         
-            def __repr__(self):
-                return f"{type(self).__name__}(x={self.x}, y={self.y})"
-        ```
-     you can still access and change the underlying non-public attributes, ._x and ._y:
-        ```
+         def __repr__(self):
+             return f"{type(self).__name__}(x={self.x}, y={self.y})"
+     ```
+  you can still access and change the underlying non-public attributes, ._x and ._y:
+     ```
         >>> point._x = 555
         >>> point
-        Point(x=555, y=42)
-        ```
-     solution:
-        ```
-        class Coordinate:
-            def __set_name__(self, owner, name):
-                self._name = name
+     Point(x=555, y=42)
+     ```
+  solution:
+     ```
+     class Coordinate:
+         def __set_name__(self, owner, name):
+             self._name = name
         
-            def __get__(self, instance, owner):
-                return instance.__dict__[f"_{self._name}"]
+         def __get__(self, instance, owner):
+             return instance.__dict__[f"_{self._name}"]
         
-            def __set__(self, instance, value):
-                raise AttributeError(f"can't set attribute '{self._name}'")
+         def __set__(self, instance, value):
+             raise AttributeError(f"can't set attribute '{self._name}'")
         
-        class Point:
-            x = Coordinate()
-            y = Coordinate()
+     class Point:
+         x = Coordinate()
+         y = Coordinate()
         
-            def __init__(self, x, y):
-                self._x = x
-                self._y = y
+         def __init__(self, x, y):
+             self._x = x
+             self._y = y
         
-            def __repr__(self):
-                return f"{type(self).__name__}(x={self.x}, y={self.y})"
-        ```
+         def __repr__(self):
+             return f"{type(self).__name__}(x={self.x}, y={self.y})"
+     ```
 4. Building Immutable Tuple-Like Objects
     
 - ```
