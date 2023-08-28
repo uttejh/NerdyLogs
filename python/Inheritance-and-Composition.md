@@ -13,6 +13,10 @@ In an inheritance relationship:
 - Classes that inherit from another are called derived classes, subclasses, or subtypes.
 - Classes from which other classes are derived are called base classes or super classes.
 - A derived class is said to derive, inherit, or extend a base class.
+
+> Note: Every class that you create in Python will implicitly derive from object. 
+The exception to this rule are classes used to indicate errors by raising an exception 
+which must be derived from the class <i>BaseException</i>.
 ## Composition
 Composition is a concept that models a has a relationship. <i>Composite</i> <b>has a</b> <i>Component</i>
 - eg, <i>Horse</i> <b>has a</b> <i>Tail</i>. 
@@ -27,7 +31,11 @@ In the diagram above, the 1 represents that the Composite class contains one obj
 - The * symbol indicates that the Composite class can contain a variable number of Component instances.
 - A range 1..4 indicates that the Composite class can contain a range of Component instances. The range is indicated with the minimum and maximum number of instances, or minimum and many instances like in 1..*.
 
-## Note
-Every class that you create in Python will implicitly derive from object. 
-The exception to this rule are classes used to indicate errors by raising an exception 
-which must be derived from the class <i>BaseException</i>.
+
+## Favor Composition over Inheritance
+Inheritance creates tightly coupled classes making it difficult to make changes. 
+In bigger projects there are multiple levels of inheritance creating tightly coupled 
+classes that are very rigid to change. Combinations of classes can lead to explosion of classes 
+which can be avoided by Composition due to creation of interfaces. 
+Composition allows you to change the behavior of a class by modifying its composed components
+without affecting other parts of the codebase.
