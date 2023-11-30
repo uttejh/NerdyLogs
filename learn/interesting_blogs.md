@@ -1,0 +1,31 @@
+## Engineering Blogs
+- [Figma Engineering](https://www.figma.com/blog/engineering/)
+- [Meta Engineering](https://engineering.fb.com/)
+- [Stripe Engineering](https://stripe.com/blog/engineering)
+- [AWS Architecture Blog](https://aws.amazon.com/blogs/architecture/)
+- [Netflix Tech Blog](https://netflixtechblog.com/)
+- [Airbnb Engineering](https://medium.com/airbnb-engineering)
+- [Uber Engineering](https://www.uber.com/en-IN/blog/engineering/)
+- [Github Engineering](https://github.blog/category/engineering/)
+- [Spotify Engineering](https://engineering.atspotify.com/)
+- [Slack Engineering](https://slack.engineering/)
+- [Instacart Engineering](https://tech.instacart.com/)
+- [Slack Engineering](https://stackoverflow.blog/engineering/)
+- [Ramp Engineering](https://engineering.ramp.com/)
+- [Dropbox Tech](https://dropbox.tech/)
+- [Instagram Engineering](https://engineering.fb.com/tag/instagram/)
+- [Microsoft Engineering](https://devblogs.microsoft.com/engineering-at-microsoft/)
+- [Twitter Engineering](https://blog.twitter.com/engineering/en_us)
+- [Notion Tech](https://www.notion.so/blog/topic/tech)
+- [Lyft Engineering](https://eng.lyft.com/)
+- [Canva Engineering](https://www.canva.dev/blog/engineering/)
+- [Snap Engineering](https://eng.snap.com/blog)
+- [Twitch Enigneering](https://blog.twitch.tv/en/tags/engineering/)
+
+## ML Blogs
+- [Paperspace](https://blog.paperspace.com/)
+- [Zbigatron](http://zbigatron.com/)
+
+## CV Blogs
+- [Neptune AI](https://neptune.ai/blog/category/computer-vision)
+- [Blogboard](https://blogboard.io/topic/Computer%20Vision)
