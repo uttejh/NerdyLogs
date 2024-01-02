@@ -4,7 +4,8 @@
 
 ## CV
 - [Bag of Tricks for Image Classification](https://learnopencv.com/bag-of-tricks-for-image-classification/)
-
+- Torch.compile
+- Flame graphs
 
 ## Random topics
 - JavaScript’s event loop
