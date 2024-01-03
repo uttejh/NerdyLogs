@@ -16,7 +16,7 @@
 ## Tools
 - [Annotated Pytorch papers](https://nn.labml.ai/)
 - [NN viz](http://alexlenail.me/NN-SVG/)
-
+- [Netron](https://netron.app/?url=https://github.com/AlexeyAB/darknet/raw/master/cfg/yolo.cfg)
 
 ## Courses
 - [Gen AI - NVIDIA](https://courses.nvidia.com/courses/course-v1:DLI+S-FX-07+V1/)

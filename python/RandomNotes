@@ -1,0 +1,2 @@
+Don't make classes too large, make them either data-oriented or behavior-oriented.
+Classes should not contain loads of instance variables and loads of methods at the same time. 
